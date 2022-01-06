@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Small Screen*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Mediume Screen  */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Larger Screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end general rules */
+
+/* start header */
+header {
+  box-shadow: 0px 0px 10px #ccc;
+  padding: 20px 0px;
+}
+
+header h1 {
+  margin: 0;
+}
+header h1 span {
+  color: #1d9bf0;
+}
+/* end header */
+
+/* start section */
+.section {
+  padding: 100px 0px;
+  position: relative;
+}
+
+.section .container .boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.section .container .boxes .box {
+  height: 180px;
+  width: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s linear;
+}
+
+.section .container .boxes .box:hover {
+  box-shadow: 0 0 10px #ccc;
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+
+.section .container .boxes .box:nth-child(odd) {
+  background-color: #e66372;
+}
+
+.section .container .boxes .box:nth-child(even) {
+  background-color: #fb4f4f;
+}
+
+.section .container .boxes .box a {
+  font-size: 40px;
+  color: white;
+  text-transform: capitalize;
+}
+/* end section */
+
+footer {
+  background-color: rgba(0, 0, 0, 0.845);
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding: 30px 0px;
+  text-transform: capitalize;
+}
+
+/* start page test.html */
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0px;
+}
+.show-questions {
+  min-height: 200px;
+}
+.show-questions .content {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 30px 70px;
+  border-radius: 6px;
+}
+
+.show-questions .content .box {
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+.show-questions .content .box.active {
+  opacity: 1;
+}
+
+.show-questions .content .box.hidden {
+  display: none;
+}
+
+button {
+  width: 400px;
+  border: none;
+  margin: 20px auto;
+  background-color: #1d9bf0;
+  display: block;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.active {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.not-found {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.grouping {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.radio {
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  /* Not removed via appearance */
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 6px;
+  position: relative;
+  transform: translateY(-0.075em);
+}
+
+.radio.active {
+  pointer-events: none;
+}
+
+.radio::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: #1d9bf0;
+  transition: 0.5s linear;
+}
+
+.radio:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* end page test.html */
